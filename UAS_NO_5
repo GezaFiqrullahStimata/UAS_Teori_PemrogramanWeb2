@@ -1,0 +1,16 @@
+<?php
+
+$get - mysqli-query(Skoneksi,"SELECT * FROM detail.pesanan p, produk pr, pelanggan pl WHERE p.id_produk = pr.id_produk AND id_pesanan = '$idp'"
+ <?php $i=1?>
+  <?php foreach($get as $dtlPesan) :?>
+  <tr>
+      <td><?= $i; ?></td>
+      <td><?= $dtlPesan['nama_produk']; ?></td>
+      <td><?= $dtlPesan['harga']; ?></td>
+      <td><?= $dtlPesan['qty']; ?></td>
+      <td><?= $dtlPesan['harga'] * $dtlPesan['qty'] ?></td>
+      <td>Edit | Delete</td>
+  </tr>
+  <?php $i++; ?>
+  <?php endforeach ?>
+?>
